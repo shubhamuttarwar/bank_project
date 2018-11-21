@@ -88,6 +88,7 @@ class Account:
                     if self.verify_pin(entered_pin):
                         self.parent.pockets[pocket_name] = 0
                         print("The Pocket '{}' has been withdrawn".format(pocket_name))
+                        del self.parent.pockets[pocket_name]
                         break
                     else:
                         print("The Pin is wrong! Try again. You have {} tries left".format(counter-1))
@@ -96,7 +97,7 @@ class Account:
                     print("The Pocket is Locked for 24 Hours. You may try after 24 Hours")
             else:
                 print("The pocket is not locked yet!")
-            del self.parent.pockets[pocket_name]
+            
             
             
                 
